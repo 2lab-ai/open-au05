@@ -25,7 +25,7 @@ use std::time::Duration;
 #[derive(Parser)]
 #[command(
     name = "open-au05",
-    version,
+    version = env!("OPEN_AU05_VERSION_STRING"),
     about = "Complete open-source Linux tool for the Ulanzi Vibe Key AU05 (fff1:00dd)"
 )]
 struct Cli {

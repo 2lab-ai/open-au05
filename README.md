@@ -19,7 +19,17 @@ Pure Rust, single binary, zero C library dependencies (`hidapi` / `libudev` / `W
 
 ## Quick Start (Linux)
 
-### 1. Build & install
+### 1. Install via Homebrew (recommended)
+
+```sh
+# Preview channel (tracks latest main):
+brew install 2lab-ai/tap/open-au05-preview
+
+# Stable channel (tracks v* releases):
+brew install 2lab-ai/tap/open-au05
+```
+
+Or build from source:
 
 ```sh
 git clone https://github.com/2lab-ai/open-au05.git
@@ -33,7 +43,7 @@ install -Dm755 target/release/open-au05 ~/.local/bin/open-au05
 ```sh
 open-au05 setup udev
 # Or install directly with sudo:
-sudo ~/.local/bin/open-au05 setup udev --install
+sudo "$(command -v open-au05)" setup udev --install
 ```
 
 Unplug and replug the AU05 USB receiver once, then verify everything with:
