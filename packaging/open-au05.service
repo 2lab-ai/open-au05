@@ -1,0 +1,13 @@
+[Unit]
+Description=open-au05 — Ulanzi Vibe Key AU05 Linux daemon
+After=graphical-session.target pipewire.service
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/open-au05 daemon
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target

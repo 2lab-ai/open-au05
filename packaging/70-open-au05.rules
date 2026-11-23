@@ -1,0 +1,8 @@
+# Grant active desktop session access to the Ulanzi Vibe Key AU05 (fff1:00dd)
+# vendor HID configuration channel (interface 03, usage page 0xFFFC).
+# Does NOT expose standard keyboard interfaces to unprivileged processes.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="fff1", ATTRS{idProduct}=="00dd", IMPORT{builtin}="usb_id"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="fff1", ATTRS{idProduct}=="00dd", ENV{ID_USB_INTERFACE_NUM}=="03", TAG+="uaccess"
+
+# Grant active desktop session access to /dev/uinput for Wayland/X11 key & wheel injection.
+SUBSYSTEM=="misc", KERNEL=="uinput", OPTIONS+="static_node=uinput", TAG+="uaccess"
